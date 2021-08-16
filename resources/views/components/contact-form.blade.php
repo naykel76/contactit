@@ -2,7 +2,8 @@
     <script src="https://www.google.com/recaptcha/api.js"></script>
 @endsection
 
-<form {{ $attributes->merge(['class' => 'bx']) }} method="POST" action="{{ route('contact.store') }}">
+{{-- do not add padding classes here! --}}
+<form {{ $attributes->merge([]) }} method="POST" action="{{ route('contact.store') }}">
 
     @csrf
 
@@ -15,6 +16,7 @@
     <x-formit-input for="email" type="email" label="E-mail Address" autocomplete="email" />
     <x-formit-input for="subject" type="subject" label="Subject" />
     <x-formit-textarea for="message" type="message" label="Message" />
+
 
     <div class="frm-row">
         <div class="g-recaptcha" data-sitekey="{{ config('naykel.recaptcha.site_key') }}" class></div>
