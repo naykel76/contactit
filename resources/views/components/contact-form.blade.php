@@ -2,7 +2,6 @@
     <script src="https://www.google.com/recaptcha/api.js"></script>
 @endsection
 
-{{-- do not add padding classes here! --}}
 <form {{ $attributes->merge([]) }} method="POST" action="{{ route('contact.store') }}">
 
     @csrf
@@ -12,10 +11,10 @@
     {{ $slot }}
 
     {{-- only remove top margin if there is no slot content --}}
-    <x-formit-input for="name" type="name" label="Name" autocomplete="name" rowClasses="{{ $slot == '' ? 'nmt' : '' }}" />
-    <x-formit-input for="email" type="email" label="E-mail Address" autocomplete="email" />
-    <x-formit-input for="subject" type="subject" label="Subject" />
-    <x-formit-textarea for="message" type="message" label="Message" />
+    <x-formit::input for="name" type="name" label="Name" autocomplete="name" rowClasses="{{ $slot == '' ? 'nmt' : '' }}" />
+    <x-formit::input for="email" type="email" label="E-mail Address" autocomplete="email" />
+    <x-formit::input for="subject" type="subject" label="Subject" />
+    <x-formit::textarea for="message" type="message" label="Message" />
 
 
     <div class="frm-row">
@@ -26,7 +25,7 @@
     </div>
 
     <div class="frm-row">
-        <button type="submit" class="btn-primary">SUBMIT</button>
+        <button type="submit" class="btn primary">SUBMIT</button>
     </div>
 
 </form>
