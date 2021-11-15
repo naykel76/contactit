@@ -1,6 +1,6 @@
-@section('head')
+@push('head')
     <script src="https://www.google.com/recaptcha/api.js"></script>
-@endsection
+@endpush
 
 <form {{ $attributes->merge([]) }} method="POST" action="{{ route('contact.store') }}">
 
