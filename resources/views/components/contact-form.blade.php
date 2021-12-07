@@ -11,11 +11,10 @@
     {{ $slot }}
 
     {{-- only remove top margin if there is no slot content --}}
-    <x-formit::input for="name" type="name" label="Name" autocomplete="name" rowClasses="{{ $slot == '' ? 'nmt' : '' }}" />
-    <x-formit::input for="email" type="email" label="E-mail Address" autocomplete="email" />
-    <x-formit::input for="subject" type="subject" label="Subject" />
-    <x-formit::textarea for="message" type="message" label="Message" />
-
+    <x-gotime-input for="name" type="name" label="Name" autocomplete="name" rowClasses="{{ $slot == '' ? 'nmt' : '' }}" />
+    <x-gotime-input for="email" type="email" label="E-mail Address" autocomplete="email" />
+    <x-gotime-input for="subject" type="subject" label="Subject" />
+    <x-gotime-textarea for="message" type="message" label="Message" />
 
     <div class="frm-row">
         <div class="g-recaptcha" data-sitekey="{{ config('naykel.recaptcha.site_key') }}" class></div>
