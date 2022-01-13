@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- update spatie/laravel-honeypot
+
 ## 0.2.0
 
 - update to gotime form components

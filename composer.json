@@ -15,7 +15,7 @@
     "keywords": ["Laravel", "Contactit"],
     "require": {
         "illuminate/support": "~7|~8",
-        "spatie/laravel-honeypot": "^3.0"
+        "spatie/laravel-honeypot": "^4.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
