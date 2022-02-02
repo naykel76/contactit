@@ -1,13 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Naykel\Contactit\Controllers\ContactitController;
-use Spatie\Honeypot\ProtectAgainstSpam;
+
 
 Route::middleware(['web'])->group(function () {
-    route::get('/contact', [ContactitController::class, 'index'])->name('contact');
-    route::post('/contact/store', [ContactitController::class, 'store'])->name('contact.store')->middleware(ProtectAgainstSpam::class);
+
+    // check if local contact page or use package default
+    if (view()->exists('pages.contact')) {
+        $view = 'pages.contact';
+    } else {
+        $view = 'contactit::contact';
+    }
+
+
+    route::view('/contact', $view)->name('contact');
 });
+
+
 
 // use Illuminate\Support\Facades\Mail;
 // use Naykel\ContactitController\Mail\MessageReceived;

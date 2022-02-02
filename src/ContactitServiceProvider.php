@@ -3,27 +3,22 @@
 namespace Naykel\Contactit;
 
 use Illuminate\Support\ServiceProvider;
-use Naykel\Contactit\View\Components\Contact;
+use Naykel\Contactit\Http\Livewire\Contact;
+use Livewire\Livewire;
 
 class ContactitServiceProvider extends ServiceProvider
 {
-    /**
-     * Perform post-registration booting of services.
-     *
-     * @return void
-     */
+
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'contactit');
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
-        $this->loadViewComponentsAs('contactit', [
-            Contact::class,
-        ]);
+        Livewire::component('contact', Contact::class);
 
-        /** Publish Views (optional) 
+        /** Publish Views (optional)
          * ==================================================================
-         * 
+         *
          */
         $this->publishes(
             [

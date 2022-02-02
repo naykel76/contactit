@@ -1,13 +1,15 @@
 @component('mail::message')
-# New Enquiry:
+
+# New Website Enquiry:
 
 **From:** {{ $enquiry['name'] }}
 
 **E-Mail Address:** {{ $enquiry['email'] }}
 
-**Subject:** {{ $enquiry['subject'] }}
+**Phone:** {{ $enquiry['phone'] ?? null}}
+
+**Subject:** {{ $enquiry['subject'] ?? null}}
 
 **Message:** {{ $enquiry['message'] }}
 
 @endcomponent
-

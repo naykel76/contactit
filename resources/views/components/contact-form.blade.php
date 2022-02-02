@@ -1,30 +1,38 @@
 @push('head')
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha_site_key') }}"></script>
 @endpush
 
-<form {{ $attributes->merge([]) }} method="POST" action="{{ route('contact.store') }}">
+<form x-data="{
+        execute(){
+            grecaptcha.ready(() => {
+                grecaptcha.execute('{{ config('services.recaptcha_site_key') }}', { action: 'contact' })
+                .then((token) => {
+                    {{-- set the hidden input value --}}
+                    this.$refs.recaptchaToken.value = token;
+                    {{-- set livewire token value --}}
+                    $wire.set('recaptchaToken', token);
+                })
+                .then(() => {
+                    $wire.submitForm()
+                })
+            })
+        }
+    }" x-on:submit.prevent="execute">
 
     @csrf
-
     <x-honeypot />
 
-    {{ $slot }}
+    <x-gotime-input wire:model="name" for="name" placeholder="Name*" />
+    <x-gotime-input wire:model="email" for="email" placeholder="Email*" />
+    <x-gotime-input wire:model="subject" for="subject" placeholder="Subject" />
+    <x-gotime-textarea wire:model="message" for="message" placeholder="What would you like to say?" />
+    <x-gotime-input type="hidden" for="recaptchaToken" x-ref="recaptchaToken" />
 
-    {{-- only remove top margin if there is no slot content --}}
-    <x-gotime-input for="name" type="name" label="Name" autocomplete="name" rowClasses="{{ $slot == '' ? 'nmt' : '' }}" />
-    <x-gotime-input for="email" type="email" label="E-mail Address" autocomplete="email" />
-    <x-gotime-input for="subject" type="subject" label="Subject" />
-    <x-gotime-textarea for="message" type="message" label="Message" />
-
-    <div class="frm-row">
-        <div class="g-recaptcha" data-sitekey="{{ config('naykel.recaptcha.site_key') }}" class></div>
-        @error('g-recaptcha-response')
-            <span class="txt-red" role="alert"> {{ $message }} </span>
-        @enderror
-    </div>
-
-    <div class="frm-row">
-        <button type="submit" class="btn primary">SUBMIT</button>
-    </div>
+	<div class="flex">
+        <button type="submit" class="btn primary">Contact Us</button>
+		<div wire:loading>
+			<div class="spinner ml"></div>
+		</div>
+	</div>
 
 </form>

@@ -11,11 +11,6 @@ class MessageReceived extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
 
     public $enquiry;
 
@@ -25,7 +20,7 @@ class MessageReceived extends Mailable
     }
 
     /**
-     * Build the message.
+     * Build message and send confirmation to admin
      *
      * @return $this
      */

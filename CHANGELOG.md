@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0
+
+- remove contact controller functionality
+- add contact livewire component
+- replace recaptcha v2 with v3
+
 ## 0.2.1
 
 - update spatie/laravel-honeypot

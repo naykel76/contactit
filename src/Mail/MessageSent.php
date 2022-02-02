@@ -19,7 +19,7 @@ class MessageSent extends Mailable
     }
 
     /**
-     * Build and send confirmation message to the user confirming message received
+     * Build message and send confirmation to user
      *
      * @return $this
      */
@@ -28,3 +28,7 @@ class MessageSent extends Mailable
         return $this->markdown('contactit::emails.message-sent');
     }
 }
+
+
+
+

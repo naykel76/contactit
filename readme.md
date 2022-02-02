@@ -6,72 +6,67 @@
 
 # Naykel Contactit
 
-Contact form package for Naykel Laravel applications.
+Livewire contact form component with reCaptcha for Naykel Laravel applications.
 
-- [Installation and Configuration](#installation-and-configuration)
-  - [Before you begin](#before-you-begin)
-  - [Install the package via composer:](#install-the-package-via-composer)
-  - [Publish views (optional)](#publish-views-optional)
-  - [Configuration settings](#configuration-settings)
+<!-- MarkdownTOC -->
+
+- [Things to Know](#things-to-know)
+- [Installation](#installation)
+- [Finishing up and making it work](#finishing-up-and-making-it-work)
+    - [Add ReCaptcha keys to .env](#add-recaptcha-keys-to-env)
 - [Usage](#usage)
-  - [Props and attributes](#props-and-attributes)
-  - [Views](#views)
-- [FAQ's](#faqs)
+    - [Component Attributes](#component-attributes)
 - [Change log](#change-log)
-  
-## Installation and Configuration
 
-### Before you begin
+<!-- /MarkdownTOC -->
 
-- This package requires Google reCAPTCHA for validation. Once installed be sure to add the Google Captcha keys to your `.env` file.
-- Routes are loaded from the package (including contact page), there is no need to do anything.
 
-### Install the package via composer:
+<a id="things-to-know"></a>
+## Things to Know
+
+- This package requires `naykel/gotime` starter kit.
+- This package uses Google reCAPTCHA v3 for validation.
+- Contact routes is loaded loaded directly from the package.
+
+<a id="installation"></a>
+## Installation
+
+To get started, install Contactit using the Composer package manager:
 
     composer require naykel/contactit
 
-### Publish views (optional)
-  
-Publish views for custom layouts.
+Optionally you can publish views for custom layouts.
 
   php artisan vendor:publish --tag=contactit-views
 
+<a id="finishing-up-and-making-it-work"></a>
+## Finishing up and making it work
 
-### Configuration settings
-
-**NOTE:** This package does not have its own configuration file, any config settings are part of the default laravel config or `naykel/gotime` package configuration file.
+<a id="add-recaptcha-keys-to-env"></a>
+### Add ReCaptcha keys to .env
 
     RECAPTCHA_SITE_KEY=your_site_key
     RECAPTCHA_SECRET_KEY=your_recapture_secret_key
 
+<a id="usage"></a>
 ## Usage
 
 ``` html
-<x-contactit-contact />
-
-<x-contactit-contact> 
-  <p>Add custom content in slot</p>
-<x-contactit-contact />
+<!-- default form -->
+<livewire:contact />
+<!--  -->
+<livewire:contact layout="simple" />
 ```
 
-### Props and attributes
 
-| ID  | Type | Default | Description |
-| --- | ---- | ------- | ----------- |
-|     |      |         |             |
+<a id="component-attributes"></a>
+### Component Attributes
 
-### Views
+| Attribute | Required | Description                                                    |
+| --------- | -------- | -------------------------------------------------------------- |
+| `layout`  | no       | Defines the form style (refer to layouts for more information) |
 
-Publish views for custom layouts.
-
-## FAQ's
-
-##### How do I edit mail templates?
-
-
-
-
-
+<a id="change-log"></a>
 ## Change log
 
 See the [changelog](changelog.md) for more information on what has changed recently.
