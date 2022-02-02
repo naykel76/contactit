@@ -3,18 +3,20 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::middleware(['web'])->group(function () {
+if (config('naykel.has_contact_page')) {
+    Route::middleware(['web'])->group(function () {
 
-    // check if local contact page or use package default
-    if (view()->exists('pages.contact')) {
-        $view = 'pages.contact';
-    } else {
-        $view = 'contactit::contact';
-    }
+        // check if local contact page or use package default
+        if (view()->exists('pages.contact')) {
+            $view = 'pages.contact';
+        } else {
+            $view = 'contactit::contact';
+        }
 
 
-    route::view('/contact', $view)->name('contact');
-});
+        route::view('/contact', $view)->name('contact');
+    });
+}
 
 
 
