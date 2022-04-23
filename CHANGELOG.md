@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+- update control components
+- update layout
+
 ## 1.0.0
 
 - remove contact controller functionality

@@ -20,13 +20,15 @@
     }" x-on:submit.prevent="execute">
 
     @csrf
+
     <x-honeypot />
 
-    <x-gotime-input wire:model="name" for="name" placeholder="Name*" />
-    <x-gotime-input wire:model="email" for="email" placeholder="Email*" />
-    <x-gotime-input wire:model="subject" for="subject" placeholder="Subject" />
-    <x-gotime-textarea wire:model="message" for="message" placeholder="What would you like to say?" />
-    <x-gotime-input type="hidden" for="recaptchaToken" x-ref="recaptchaToken" />
+    <x-input wire:model="name" for="name" label="Name*"/>
+    <x-input wire:model="email" for="email" label="Email*" type="email"/>
+
+    <x-input wire:model="subject" for="subject" label="Subject*" />
+    <x-textarea wire:model="message" for="message" label="What is your message?*" />
+    <x-input type="hidden" for="recaptchaToken" x-ref="recaptchaToken" />
 
 	<div class="flex">
         <button type="submit" class="btn primary">Contact Us</button>
