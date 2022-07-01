@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- minor template tweaks
+
 ## 1.0.1
 - update control components
 - update layout

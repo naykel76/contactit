@@ -22,7 +22,7 @@ class ContactitServiceProvider extends ServiceProvider
          */
         $this->publishes(
             [
-                __DIR__ . '/../resources/views/pages' => resource_path('views/pages'),
+                __DIR__ . '/../resources/views/contact.blade.php' => resource_path('views/'),
             ],
             'contactit-views'
         );

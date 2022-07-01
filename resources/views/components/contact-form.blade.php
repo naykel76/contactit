@@ -23,18 +23,17 @@
 
     <x-honeypot />
 
-    <x-input wire:model="name" for="name" label="Name*"/>
-    <x-input wire:model="email" for="email" label="Email*" type="email"/>
-
-    <x-input wire:model="subject" for="subject" label="Subject*" />
-    <x-textarea wire:model="message" for="message" label="What is your message?*" />
+    <x-input wire:model="name" for="name" label="Name" req />
+    <x-input wire:model="email" for="email" label="Email" type="email" req />
+    <x-input wire:model="subject" for="subject" label="Subject" />
+    <x-textarea wire:model="message" for="message" label="What is your message?" req />
     <x-input type="hidden" for="recaptchaToken" x-ref="recaptchaToken" />
 
-	<div class="flex">
+    <div class="flex">
         <button type="submit" class="btn primary">Contact Us</button>
-		<div wire:loading>
-			<div class="spinner ml"></div>
-		</div>
-	</div>
+        <div wire:loading>
+            <div class="spinner ml"></div>
+        </div>
+    </div>
 
 </form>

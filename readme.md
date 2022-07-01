@@ -36,7 +36,7 @@ To get started, install Contactit using the Composer package manager:
 
 Optionally you can publish views for custom layouts.
 
-  php artisan vendor:publish --tag=contactit-views
+    php artisan vendor:publish --tag=contactit-views
 
 <a id="finishing-up-and-making-it-work"></a>
 ## Finishing up and making it work
