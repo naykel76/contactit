@@ -27,7 +27,7 @@
     <x-input wire:model="email" for="email" label="Email" type="email" req />
     <x-input wire:model="subject" for="subject" label="Subject" />
     <x-textarea wire:model="message" for="message" label="What is your message?" req />
-    <x-input type="hidden" for="recaptchaToken" x-ref="recaptchaToken" />
+    <x-input type="hidden" for="recaptchaToken" x-ref="recaptchaToken" rowClasses="mxy-0" />
 
     <div class="flex">
         <button type="submit" class="btn primary">Contact Us</button>
