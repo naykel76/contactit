@@ -13,7 +13,7 @@ Livewire contact form component with reCaptcha for Naykel Laravel applications.
 - [Things to Know](#things-to-know)
 - [Installation](#installation)
 - [Finishing up and making it work](#finishing-up-and-making-it-work)
-  - [Add ReCaptcha keys to .env](#add-recaptcha-keys-to-env)
+    - [Add ReCaptcha keys to .env](#add-recaptcha-keys-to-env)
 - [Usage](#usage)
 - [Change log](#change-log)
 
@@ -23,9 +23,9 @@ Livewire contact form component with reCaptcha for Naykel Laravel applications.
 <a id="things-to-know"></a>
 ## Things to Know
 
-- This package requires the `naykel/gotime` starter kit.
-- This package uses Google reCAPTCHA v3 for validation.
-- Contact routes are loaded directly from the package.
+- This package requires the `naykel/gotime` starter kit
+- This package uses Google reCAPTCHA v3 for validation
+- Contact routes are loaded directly from the package
 
 <a id="installation"></a>
 ## Installation
