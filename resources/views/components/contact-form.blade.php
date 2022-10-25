@@ -23,11 +23,11 @@
 
     <x-honeypot />
 
-    <x-input wire:model="name" for="name" label="Name" req />
-    <x-input wire:model="email" for="email" label="Email" type="email" req />
-    <x-input wire:model="subject" for="subject" label="Subject" />
-    <x-textarea wire:model="message" for="message" label="What is your message?" req />
-    <x-input type="hidden" for="recaptchaToken" x-ref="recaptchaToken" rowClass="mxy-0" />
+    <x-gt-input wire:model="name" for="name" label="Name" req />
+    <x-gt-input wire:model="email" for="email" label="Email" type="email" req />
+    <x-gt-input wire:model="subject" for="subject" label="Subject" />
+    <x-gt-textarea wire:model="message" for="message" label="What is your message?" req />
+    <x-gt-input type="hidden" for="recaptchaToken" x-ref="recaptchaToken" rowClass="mxy-0" />
 
     <div class="flex">
         <button type="submit" class="btn primary">Contact Us</button>

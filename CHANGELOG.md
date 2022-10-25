@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+- update gotime form components
+- fix publish view
+
+
 ## 1.0.2
 
 - minor template tweaks
