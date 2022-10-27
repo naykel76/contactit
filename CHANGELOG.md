@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+- add defer to inputs to fix time out errors
+
 ## 1.1.0
 
 - update gotime form components
