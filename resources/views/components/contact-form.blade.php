@@ -32,7 +32,7 @@
     <div class="flex">
         <button type="submit" class="btn primary">Contact Us</button>
         <div wire:loading>
-            <div class="spinner ml"></div>
+            <x-gt-loading-indicator />
         </div>
     </div>
 

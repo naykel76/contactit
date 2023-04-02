@@ -16,6 +16,7 @@ class Contact extends Component
     public function submitForm()
     {
         $validatedData = $this->validate([
+            // 'required|string|max:128',
             'name' => 'required',
             'email' => 'required',
             'message' => 'required',

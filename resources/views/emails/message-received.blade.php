@@ -1,4 +1,4 @@
-@component('mail::message')
+<x-mail::message>
 
 # New Website Enquiry:
 
@@ -12,4 +12,10 @@
 
 **Message:** {{ $enquiry['message'] }}
 
-@endcomponent
+<x-mail::button :url="''">
+Button Text
+</x-mail::button>
+
+Thanks,<br>
+{{ config('app.name') }}
+</x-mail::message>
