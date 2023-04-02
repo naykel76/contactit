@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.2
+- fix class typo
+
 ## 1.2.1
 - update mail classes to new laravel syntax
 
