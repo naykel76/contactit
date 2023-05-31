@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.3
+- Add: page title to view and max width
+
 ## 1.2.2
 - fix class typo
 
