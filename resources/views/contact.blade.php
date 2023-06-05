@@ -1,4 +1,4 @@
-<x-gotime-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2" :$pageTitle>
+<x-gotime-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2-2" :$pageTitle>
 
     <div class="container maxw-md">
 

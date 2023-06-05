@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.4
+- Updated: JTB classes and layouts
+
 ## 1.2.3
 - Add: page title to view and max width
 
