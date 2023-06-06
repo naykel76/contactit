@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.5
+- Fixed: reply email address when message received
+
 ## 1.2.4
 - Updated: JTB classes and layouts
 

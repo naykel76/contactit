@@ -2,12 +2,13 @@
 
 namespace Naykel\Contactit\Mail;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Address;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Queue\SerializesModels;
 
 class MessageReceived extends Mailable
 {
@@ -17,6 +18,14 @@ class MessageReceived extends Mailable
     {
     }
 
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            subject: 'Message Received',
+            from: new Address($this->enquiry['email'], $this->enquiry['name'])
+        );
+    }
+
     public function content(): Content
     {
         return new Content(
@@ -24,5 +33,8 @@ class MessageReceived extends Mailable
         );
     }
 
-
+    public function attachments(): array
+    {
+        return [];
+    }
 }
