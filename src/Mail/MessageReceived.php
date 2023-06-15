@@ -22,7 +22,10 @@ class MessageReceived extends Mailable
     {
         return new Envelope(
             subject: 'Message Received',
-            from: new Address($this->enquiry['email'], $this->enquiry['name'])
+            replyTo: [
+                new Address($this->enquiry['email'], $this->enquiry['name']),
+            ],
+
         );
     }
 

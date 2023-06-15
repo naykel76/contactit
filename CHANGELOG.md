@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.0
+- Changed: from to replyTo in message received to prevent 550 error
+
 ## 1.2.5
 - Fixed: reply email address when message received
 
