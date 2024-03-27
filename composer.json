@@ -3,7 +3,7 @@
     "description": "Simple contact package for NayKel Laravel Applications",
     "license": "MIT",
     "minimum-stability": "dev",
-    "prefer-stable" : true,
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Nathan Watts",
@@ -12,8 +12,13 @@
         }
     ],
     "homepage": "https://github.com/naykel76/contactit.git",
-    "keywords": ["Laravel", "Contactit"],
+    "keywords": [
+        "Laravel",
+        "Contactit"
+    ],
     "require": {
+        "php": "^8.2",
+        "livewire/livewire": "^3.2",
         "spatie/laravel-honeypot": "^4.3"
     },
     "require-dev": {

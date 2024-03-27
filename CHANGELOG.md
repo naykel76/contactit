@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.0
+- Updated for Livewire 3 and Laravel 11
+
 ## 1.3.0
 - Changed: from to replyTo in message received to prevent 550 error
 

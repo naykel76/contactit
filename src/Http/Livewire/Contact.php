@@ -29,7 +29,7 @@ class Contact extends Component
         // user confirmation email
         Mail::to($validatedData['email'])->send(new MessageSent($validatedData));
 
-        $this->dispatchBrowserEvent('notify', 'Your message has been sent successfully.');
+        $this->dispatch('notify', 'Your message has been sent successfully.');
         // reset form
         $this->reset();
     }

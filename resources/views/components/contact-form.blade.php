@@ -3,9 +3,9 @@
 @endpush
 
 <form x-data="{
-        execute(){
-            grecaptcha.ready(() => {
-                grecaptcha.execute('{{ config('services.recaptcha_site_key') }}', { action: 'contact' })
+    execute() {
+        grecaptcha.ready(() => {
+            grecaptcha.execute('{{ config('services.recaptcha_site_key') }}', { action: 'contact' })
                 .then((token) => {
                     {{-- set the hidden input value --}}
                     this.$refs.recaptchaToken.value = token;
@@ -15,9 +15,9 @@
                 .then(() => {
                     $wire.submitForm()
                 })
-            })
-        }
-    }" x-on:submit.prevent="execute">
+        })
+    }
+}" x-on:submit.prevent="execute">
 
     @csrf
 
@@ -27,7 +27,8 @@
     <x-gt-input wire:model.defer="email" for="email" label="Email" type="email" req />
     <x-gt-input wire:model.defer="subject" for="subject" label="Subject" />
     <x-gt-textarea wire:model.defer="message" for="message" label="What is your message?" req />
-    <x-gt-input type="hidden" for="recaptchaToken" x-ref="recaptchaToken" rowClass="mxy-0" />
+
+    <input type="hidden" x-ref="recaptchaToken" rowClass="mxy-0" />
 
     <div class="flex">
         <button type="submit" class="btn primary">Contact Us</button>
