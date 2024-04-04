@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0
+- Updated: layout and from
+- Updated: to include route by default without config
+
 ## 2.0.0
 - Updated for Livewire 3 and Laravel 11
 
@@ -27,7 +31,6 @@
 ## 1.1.0
 - update gotime form components
 - fix publish view
-
 
 ## 1.0.2
 - minor template tweaks

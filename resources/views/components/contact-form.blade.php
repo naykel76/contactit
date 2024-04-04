@@ -23,18 +23,20 @@
 
     <x-honeypot />
 
-    <x-gt-input wire:model.defer="name" for="name" label="Name" req />
-    <x-gt-input wire:model.defer="email" for="email" label="Email" type="email" req />
-    <x-gt-input wire:model.defer="subject" for="subject" label="Subject" />
-    <x-gt-textarea wire:model.defer="message" for="message" label="What is your message?" req />
+    <x-gt-input wire:model="name" for="name" label="Name" req />
+    <x-gt-input wire:model="email" for="email" label="Email" type="email" req />
+    <x-gt-input wire:model="subject" for="subject" label="Subject" />
+    <x-gt-textarea wire:model="message" for="message" label="What is your message?" req />
 
     <input type="hidden" x-ref="recaptchaToken" rowClass="mxy-0" />
 
-    <div class="flex">
-        <button type="submit" class="btn primary">Contact Us</button>
-        <div wire:loading>
-            <x-gt-loading-indicator />
-        </div>
+    <div class="flex items-center">
+        <button type="submit" class="btn primary mr">
+            Contact Us
+            <div wire:loading class="ml-1">
+                <x-gt-spinner />
+            </div>
+        </button>
     </div>
 
 </form>
