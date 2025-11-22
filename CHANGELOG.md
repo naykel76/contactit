@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.0
+- Updated: views to use new layout components
+- Updated: routes to include by default without config condition
+- Simplified: readme documentation
+
 ## 2.1.0
 - Updated: layout and from
 - Updated: to include route by default without config
