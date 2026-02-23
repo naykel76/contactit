@@ -10,5 +10,5 @@ Route::middleware(['web'])->group(function () {
         $view = 'contactit::contact';
     }
 
-    route::view('/contact', $view, ['title' => 'Contact'])->name('contact');
+    Route::view('/contact', $view, ['title' => 'Contact'])->name('contact');
 });
