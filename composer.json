@@ -18,6 +18,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "naykel/gotime": "^2.0",
         "spatie/laravel-honeypot": "^4.3"
     },
     "require-dev": {

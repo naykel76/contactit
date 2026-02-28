@@ -1,4 +1,4 @@
-<x-gt-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2-2" :$pageTitle>
+<x-layouts.app class="py-5-3-2-2" :$title>
     <div class="container-sm">
         <div class="bx light">
             <div class="tac mb-2">
@@ -8,4 +8,4 @@
             <livewire:contact />
         </div>
     </div>
-</x-gt-app-layout>
+</x-layouts.app>

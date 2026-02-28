@@ -2,31 +2,33 @@
 
 namespace Naykel\Contactit\Rules;
 
-use Illuminate\Contracts\Validation\Rule;
+use Closure;
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Support\Facades\Http;
 
-class Recaptcha implements Rule
+class Recaptcha implements ValidationRule
 {
-
-    public function passes($attribute, $value)
+    public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-            'secret' => config('services.recaptcha_secret_key'),
-            'response' => $value
-        ])->json();
+        $secret = config('contactit.recaptcha_secret_key') ?? config('services.recaptcha_secret_key');
 
-        // $secret = env('RECAPTCHA_SECRET_KEY');
-        // $response = Http::post("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$value")->json();
+        if (empty($secret)) {
+            $fail('reCAPTCHA is not configured.');
 
-        if ($response['score'] < 0.5) {
-            return false;
+            return;
         }
 
-        return true;
-    }
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => $secret,
+            'response' => $value,
+        ])->json();
 
-    public function message()
-    {
-        return 'Google thinks you are a bot, please refresh and try again';
+        $success = ($response['success'] ?? false) === true;
+        $score = (float) ($response['score'] ?? 0);
+        $threshold = (float) config('contactit.recaptcha_score_threshold', 0.5);
+
+        if (! $success || $score < $threshold) {
+            $fail(__('Google thinks you are a bot, please refresh and try again.'));
+        }
     }
 }
